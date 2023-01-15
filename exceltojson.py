@@ -35,9 +35,9 @@ def excel_to_json(excel_file, active_sheet, json_f_name):
     book.close()
     # 将json保存为文件
     save_json_file(jd, json_f_name)
+
+
 # 创建文件夹
-
-
 def mkdir(dir):
     if(os.path.exists(dir) == False):
         os.mkdir(dir)
