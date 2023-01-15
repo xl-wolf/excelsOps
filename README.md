@@ -1,0 +1,2 @@
+# excelsOps
+利用python从excel表格读取源数据，利用nodejs处理数据，利用shell完成自动化
