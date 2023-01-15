@@ -91,4 +91,8 @@ def writeToExcel(file):
 
 
 if __name__ == '__main__':
-    writeToExcel('./mergedJson/最终要获得的数据.json')
+    finalJsonPath = './mergedJson/最终要获得的数据.json'
+    if(os.path.exists(finalJsonPath)):
+        writeToExcel(finalJsonPath)
+    else:
+        print(finalJsonPath+'不存在！！！')
