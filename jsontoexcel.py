@@ -66,8 +66,20 @@ def setExcelBody(json, sheet):
         i = i + 1
 
 
+# 检测mergedJson文件夹下最终要获得的数据.json是否合法
+def is_json_illegal(json):
+    illegal = False
+    for row in json:
+        if(len(row.keys()) != 16):
+            illegal = True
+    return illegal
+
+
 def writeToExcel(file):
     json = readFromJson(file)
+    if(is_json_illegal(json) == True):
+        return print("mergedJson文件夹下最终要获得的数据.json数据格式不对")
+
     excel = openpyxl.Workbook()
     sheet = excel.create_sheet('明细', index=0)
     # 表头
